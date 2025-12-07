@@ -23,8 +23,9 @@ export async function generateFeedbackLink(sessionNumber: number): Promise<{ url
   }
 
   const baseUrl = window.location.origin;
+  const basePath = import.meta.env.BASE_URL || '/';
   return {
-    url: `${baseUrl}/feedback?s=${sessionNumber}&t=${token}`,
+    url: `${baseUrl}${basePath}feedback?s=${sessionNumber}&t=${token}`,
     token
   };
 }
