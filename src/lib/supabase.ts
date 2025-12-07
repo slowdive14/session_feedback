@@ -22,11 +22,12 @@ export async function generateFeedbackLink(sessionNumber: number): Promise<{ url
     return null;
   }
 
-  // HashRouter를 위한 URL 생성
-  const currentUrl = window.location.href.split('#')[0];
-  const baseHref = currentUrl.endsWith('/') ? currentUrl.slice(0, -1) : currentUrl;
+  // Vite의 BASE_URL을 사용하여 항상 올바른 경로 생성
+  const basePath = import.meta.env.BASE_URL || '/';
+  const baseUrl = window.location.origin + basePath;
+  
   return {
-    url: baseHref + '#/feedback?s=' + sessionNumber + '&t=' + token,
+    url: baseUrl + '#/feedback?s=' + sessionNumber + '&t=' + token,
     token
   };
 }
