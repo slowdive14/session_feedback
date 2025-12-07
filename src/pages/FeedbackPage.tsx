@@ -124,7 +124,7 @@ export function FeedbackPage() {
   const handleRemindLater = async () => {
     if (!sessionNumber || !accessToken) return;
 
-    const success = await createReminder(accessToken, sessionNumber);
+    const success = await createReminder(accessToken);
     setShowRemindLaterModal(false);
 
     if (success) {
