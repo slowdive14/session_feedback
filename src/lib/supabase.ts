@@ -22,10 +22,10 @@ export async function generateFeedbackLink(sessionNumber: number): Promise<{ url
     return null;
   }
 
-  const baseUrl = window.location.origin;
-  const basePath = import.meta.env.BASE_URL || '/';
+  // HashRouter를 위한 URL 생성
+  const baseHref = window.location.href.split('#')[0].replace(//$/, '');
   return {
-    url: `${baseUrl}${basePath}feedback?s=${sessionNumber}&t=${token}`,
+    url: `${baseHref}#/feedback?s=${sessionNumber}&t=${token}`,
     token
   };
 }
