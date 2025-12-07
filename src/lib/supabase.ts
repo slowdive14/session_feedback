@@ -73,7 +73,7 @@ export async function saveFeedback(token: string, feedbackData: any): Promise<bo
 }
 
 // 리마인더 생성 (나중에 작성하기)
-export async function createReminder(token: string, sessionNumber: number): Promise<boolean> {
+export async function createReminder(token: string, _sessionNumber?: number): Promise<boolean> {
   const remindAt = new Date();
   remindAt.setHours(remindAt.getHours() + 24);
 
