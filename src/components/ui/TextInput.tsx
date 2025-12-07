@@ -30,7 +30,7 @@ export function TextInput({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         disabled={disabled}
-        className="w-full px-4 py-3 border border-neutral-200 bg-white text-black text-[15px] placeholder:text-neutral-400 focus:outline-none focus:border-black disabled:bg-neutral-50 disabled:text-neutral-400 disabled:cursor-not-allowed transition-colors duration-150"
+        className="w-full px-4 py-4 border border-neutral-200 bg-white text-black text-[17px] placeholder:text-neutral-400 focus:outline-none focus:border-black disabled:bg-neutral-50 disabled:text-neutral-400 disabled:cursor-not-allowed transition-colors duration-150"
       />
     </div>
   );
