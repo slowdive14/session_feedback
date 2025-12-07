@@ -32,12 +32,12 @@ export function WantLessScreen({
       totalSteps={totalSteps}
       onBack={onBack}
     >
-      <div className="flex-1 flex flex-col pt-4">
-        <h2 className="text-[26px] font-medium text-black mb-6">
+      <div>
+        <h2 className="text-[24px] font-medium text-black mb-5">
           줄였으면 하는 것이<br />있나요?
         </h2>
 
-        <div className="space-y-3 mb-4">
+        <div className="space-y-2 mb-4">
           {WANT_LESS_OPTIONS.map((option) => (
             <Checkbox
               key={option.id}
@@ -53,17 +53,17 @@ export function WantLessScreen({
           value={wantLess.other}
           onChange={onOtherChange}
           placeholder="기타 (자유롭게)"
-          rows={3}
+          rows={2}
         />
-      </div>
 
-      <div className="pt-4 pb-2 flex gap-3">
-        <Button onClick={onSkip} variant="secondary" className="flex-1">
-          건너뛰기
-        </Button>
-        <Button onClick={onNext} className="flex-1" disabled={!hasSelection}>
-          다음
-        </Button>
+        <div className="mt-6 flex gap-3">
+          <Button onClick={onSkip} variant="secondary" className="flex-1">
+            건너뛰기
+          </Button>
+          <Button onClick={onNext} className="flex-1" disabled={!hasSelection}>
+            다음
+          </Button>
+        </div>
       </div>
     </ScreenLayout>
   );
