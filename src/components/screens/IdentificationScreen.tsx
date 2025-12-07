@@ -30,12 +30,12 @@ export function IdentificationScreen({
       totalSteps={totalSteps}
       onBack={onBack}
     >
-      <div className="pt-4">
-        <h2 className="text-[26px] font-medium text-black mb-8">
+      <div>
+        <h2 className="text-[26px] font-medium text-black mb-6">
           성함을 알려주세요
         </h2>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           <TextInput
             value={clientName}
             onChange={onNameChange}
@@ -51,11 +51,11 @@ export function IdentificationScreen({
           />
         </div>
 
-        <p className="mt-4 text-[15px] text-neutral-400">
+        <p className="mt-3 text-[15px] text-neutral-400">
           익명 선택 시 상담자는 피드백 내용만 확인할 수 있습니다
         </p>
 
-        <div className="mt-8">
+        <div className="mt-6">
           <Button onClick={onNext} fullWidth disabled={!canProceed}>
             다음
           </Button>
