@@ -18,11 +18,11 @@ export function Slider({
   return (
     <div className="w-full">
       <div className="relative">
-        <div className="text-center mb-8">
+        <div className="text-center mb-4">
           <span className="text-5xl font-light text-black tabular-nums">{value}</span>
         </div>
         
-        <div className="relative h-14 flex items-center">
+        <div className="relative h-10 flex items-center">
           <input
             type="range"
             min={min}
@@ -45,7 +45,7 @@ export function Slider({
           />
         </div>
         
-        <div className="flex justify-between mt-3">
+        <div className="flex justify-between mt-2">
           <span className="text-[15px] text-neutral-400">{leftLabel || min}</span>
           <span className="text-[15px] text-neutral-400">{rightLabel || max}</span>
         </div>

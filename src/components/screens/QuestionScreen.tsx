@@ -31,16 +31,16 @@ export function QuestionScreen({
       totalSteps={totalSteps}
       onBack={onBack}
     >
-      <div className="flex-1 flex flex-col pt-4">
-        <div className="text-base text-neutral-400 mb-2">
+      <div>
+        <div className="text-base text-neutral-400 mb-1">
           질문 {questionNumber}/{totalQuestions}
         </div>
 
-        <h2 className="text-[26px] font-medium text-black mb-12 whitespace-pre-line leading-[1.4]">
+        <h2 className="text-[24px] font-medium text-black mb-8 whitespace-pre-line leading-[1.4]">
           {question.question}
         </h2>
 
-        <div className="flex-1 flex items-center">
+        <div className="mb-8">
           <Slider
             value={value}
             onChange={onChange}
@@ -48,9 +48,7 @@ export function QuestionScreen({
             rightLabel={question.rightLabel}
           />
         </div>
-      </div>
 
-      <div className="pt-4 pb-2">
         <Button onClick={onNext} fullWidth>
           다음
         </Button>
