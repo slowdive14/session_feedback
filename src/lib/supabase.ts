@@ -23,9 +23,10 @@ export async function generateFeedbackLink(sessionNumber: number): Promise<{ url
   }
 
   // HashRouter를 위한 URL 생성
-  const baseHref = window.location.href.split('#')[0].replace(//$/, '');
+  const currentUrl = window.location.href.split('#')[0];
+  const baseHref = currentUrl.endsWith('/') ? currentUrl.slice(0, -1) : currentUrl;
   return {
-    url: `${baseHref}#/feedback?s=${sessionNumber}&t=${token}`,
+    url: baseHref + '#/feedback?s=' + sessionNumber + '&t=' + token,
     token
   };
 }
@@ -74,7 +75,7 @@ export async function saveFeedback(token: string, feedbackData: any): Promise<bo
 }
 
 // 리마인더 생성 (나중에 작성하기)
-export async function createReminder(token: string, _sessionNumber?: number): Promise<boolean> {
+export async function createReminder(token: string): Promise<boolean> {
   const remindAt = new Date();
   remindAt.setHours(remindAt.getHours() + 24);
 
