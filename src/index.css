@@ -5,6 +5,25 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Typography Scale */
+  --text-h1: 32px;
+  --text-h2: 24px;
+  --text-body: 16px;
+  --text-caption: 14px;
+
+  /* Score Colors (for slider feedback) */
+  --score-low: #EF4444;      /* red-500 */
+  --score-low-bg: #FEF2F2;   /* red-50 */
+  --score-mid: #F59E0B;      /* amber-500 */
+  --score-mid-bg: #FFFBEB;   /* amber-50 */
+  --score-high: #10B981;     /* emerald-500 */
+  --score-high-bg: #ECFDF5;  /* emerald-50 */
+
+  /* Accent Colors */
+  --accent-warm: #F5F0EB;    /* warm beige */
+  --accent-success: #10B981; /* emerald */
+
+  /* Base Colors */
   --primary: oklch(0.205 0 0);
   --primary-hover: #333333;
   --background: oklch(1 0 0);
@@ -177,9 +196,60 @@ button:focus-visible {
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* Dark mode - applies automatically based on system preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Score Colors for dark mode */
+    --score-low: #F87171;      /* red-400 */
+    --score-low-bg: #450A0A;   /* red-950 */
+    --score-mid: #FBBF24;      /* amber-400 */
+    --score-mid-bg: #451A03;   /* amber-950 */
+    --score-high: #34D399;     /* emerald-400 */
+    --score-high-bg: #022C22;  /* emerald-950 */
+
+    /* Base Colors */
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --surface: #1A1A1A;
+    --text-primary: #EBEBEB;
+    --text-secondary: #A3A3A3;
+    --text-muted: #737373;
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+  }
+}
+
+/* Manual dark mode class (for toggle support) */
 .dark {
+  /* Score Colors for dark mode */
+  --score-low: #F87171;
+  --score-low-bg: #450A0A;
+  --score-mid: #FBBF24;
+  --score-mid-bg: #451A03;
+  --score-high: #34D399;
+  --score-high-bg: #022C22;
+
+  /* Base Colors */
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
+  --surface: #1A1A1A;
+  --text-primary: #EBEBEB;
+  --text-secondary: #A3A3A3;
+  --text-muted: #737373;
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);

@@ -80,28 +80,28 @@ export interface QuestionInfo {
 export const QUESTIONS: QuestionInfo[] = [
   {
     id: 'relationship',
-    question: '오늘 충분히 이해받고\n존중받았다고 느꼈나요?',
+    question: '오늘 충분히 이해받고 존중받았다고 느꼈나요?',
     leftLabel: '아니었다',
     rightLabel: '그랬다',
     srsOriginal: 'Relationship'
   },
   {
     id: 'goals',
-    question: '오늘 다룬 주제가 나에게\n중요한 것이었나요?',
+    question: '오늘 다룬 주제가 나에게 중요한 것이었나요?',
     leftLabel: '아니었다',
     rightLabel: '그랬다',
     srsOriginal: 'Goals & Topics'
   },
   {
     id: 'approach',
-    question: '오늘 상담이 나에게 맞는\n방식으로 진행됐나요?',
+    question: '오늘 상담이 나에게 맞는 방식으로 진행됐나요?',
     leftLabel: '안 맞았다',
     rightLabel: '잘 맞았다',
     srsOriginal: 'Approach'
   },
   {
     id: 'overall',
-    question: '오늘 상담이 전반적으로\n도움이 되었나요?',
+    question: '오늘 상담이 전반적으로 도움이 되었나요?',
     leftLabel: '아니었다',
     rightLabel: '그랬다',
     srsOriginal: 'Overall'

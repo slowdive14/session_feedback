@@ -1,3 +1,4 @@
+import { Ear, Wrench, Heart, CalendarCheck } from 'lucide-react';
 import { Button, Checkbox, TextArea } from '../ui';
 import { ScreenLayout } from '../layout/ScreenLayout';
 import type { WantMore } from '../../types/feedback';
@@ -13,6 +14,14 @@ interface WantMoreScreenProps {
   currentStep: number;
   totalSteps: number;
 }
+
+// Icons for each option
+const optionIcons: Record<string, React.ReactNode> = {
+  listening: <Ear className="w-5 h-5" strokeWidth={1.5} />,
+  concreteMethods: <Wrench className="w-5 h-5" strokeWidth={1.5} />,
+  emotionTalk: <Heart className="w-5 h-5" strokeWidth={1.5} />,
+  realisticPlans: <CalendarCheck className="w-5 h-5" strokeWidth={1.5} />
+};
 
 export function WantMoreScreen({
   wantMore,
@@ -32,9 +41,9 @@ export function WantMoreScreen({
       totalSteps={totalSteps}
       onBack={onBack}
     >
-      <div>
-        <h2 className="text-[24px] font-medium text-black mb-5">
-          더 있었으면 하는 것이<br />있나요?
+      <div className="flex flex-col h-full">
+        <h2 className="text-[var(--text-h2)] font-medium text-black mb-5">
+          더 있었으면 하는 것이 있나요?
         </h2>
 
         <div className="space-y-2 mb-4">
@@ -45,6 +54,7 @@ export function WantMoreScreen({
               label={option.label}
               checked={wantMore[option.id as keyof Omit<WantMore, 'other'>]}
               onChange={(checked) => onWantMoreChange(option.id as keyof Omit<WantMore, 'other'>, checked)}
+              icon={optionIcons[option.id]}
             />
           ))}
         </div>
@@ -56,7 +66,7 @@ export function WantMoreScreen({
           rows={2}
         />
 
-        <div className="mt-6 flex gap-3">
+        <div className="mt-auto pt-6 flex gap-3">
           <Button onClick={onSkip} variant="secondary" className="flex-1">
             건너뛰기
           </Button>
