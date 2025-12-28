@@ -48,8 +48,21 @@ export function LinkGenerator() {
     }
   };
 
-  const handleOpenSMS = () => {
-    const message = `오늘 상담은 어떠셨나요?\n솔직한 피드백이 상담 과정을 더 효과적으로 만들어요. 부담 없이 남겨주세요.\n${generatedUrl}`;
+  const handleOpenSMS = async () => {
+    // 링크를 클립보드에 복사
+    try {
+      await navigator.clipboard.writeText(generatedUrl);
+    } catch {
+      const textArea = document.createElement('textarea');
+      textArea.value = generatedUrl;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+    }
+
+    // SMS 앱 열기
+    const message = `오늘 상담은 어떠셨나요?\n솔직한 피드백이 상담 과정을 더 효과적으로 만들어요.\n${generatedUrl}`;
     const smsUrl = `sms:?body=${encodeURIComponent(message)}`;
     window.location.href = smsUrl;
   };
